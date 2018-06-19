@@ -12,7 +12,14 @@ import Task from 'components/Task';
 export default class Scheduler extends Component {
     state = initialState;
 
-    handleSubmit = (event) => event.preventDefault();
+    handleSubmit = (event) => {
+        event.preventDefault();
+
+
+        console.log(this.props);
+        console.log('m');
+        
+    }
 
     complete = (id) =>
         this.setState(({ todos }) => ({
@@ -70,7 +77,7 @@ export default class Scheduler extends Component {
                     <section>
                         <form onSubmit = { this.handleSubmit }>
                             <input placeholder = 'Описание моей новой задачи' type = 'text' />
-                            <button>Добавить задачу</button>
+                            <button >Добавить задачу</button>
                         </form>
                         <ul>{todoList}</ul>
                     </section>
